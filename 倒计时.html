@@ -5,14 +5,14 @@
 		<title></title>
 		<style type="text/css">
 			#box{
-				width:400px;
-				height:100px;
+				width:800px;
+				height:200px;
 				margin: 0 auto;
 				color: red;
 				background-color: greenyellow;
 				font-size: 50px;
 				text-align: center;
-				line-height: 100px;
+				line-height: 200px;
 			}
 			#start{
 				width:100px;
@@ -34,7 +34,6 @@
 		<button id="start">恢复</button>
 		<button id="stop">停止</button>
 		<script type="text/javascript">
-			var num;
 			function dingshi(){
 				num=setInterval(function() {
 					var data = new Date()
@@ -44,11 +43,12 @@
 					var shi = parseInt(time % (60*60*24) / 60 /60)
 					var fen = parseInt(time % (60*60) / 60)
 					var miao = parseInt(time % 60)
-					box.innerHTML = tian + ':' + shi + ':' + fen + ':' + miao
+					box.innerHTML = '倒计时：' +tian + '天' + shi + '小时' + fen + '分钟' + miao+ '秒'
 				}, 100)
 			}
 			dingshi()
 			var stop = document.querySelector('#stop')
+			var num;
 			start.onclick = function(){
 				if(num==undefined){
 					dingshi()
